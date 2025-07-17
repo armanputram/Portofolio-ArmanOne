@@ -28,14 +28,18 @@
   </header>
 
   <section class="home" id="home">
-    <div class="home-text">
-      <h2>Hello, I'm Arman Putra <i class="ph-bold ph-hand-waving"></i></h2>
-      <h3>Backend Developer</h3>
+  <div class="home-text">
+  <h2><span id="typing-text"></span><i class="ph-bold ph-hand-waving"></i></h2>
+  <h3><span id="role-text"></span></h3>
+
       <p>
-        I'm a frontend developer based in Nepal, passionate about creating
-        beautiful and functional user interfaces. With a strong dedication to
-        my craft, I focus on writing clean, responsive code and delivering
-        high-quality web experiences that blend creativity and performance.
+       I’m a multidisciplinary freelancer with expertise in web development, 
+       graphic design, and digital marketing. I help businesses and personal brands grow their online presence through clean,
+       responsive websites, eye-catching visuals, and data-driven marketing strategies.
+       Whether you need a modern website, a strong brand identity, or an effective campaign to reach your audience, I offer end-to-end support to bring your ideas to life — creatively and strategically.
+       Let’s collaborate and turn your vision into real results.
+
+
       </p>
       <div class="home-btn">
         <a href="#" class="btn">Contact Info</a>
@@ -364,6 +368,56 @@
       </div>
     </div>
   </footer>
+<script>
+  // Efek mengetik untuk nama
+  const nameText = "Hello, I'm Arman Putra ";
+  const nameElement = document.getElementById("typing-text");
+  let nameIndex = 0;
+
+  function typeName() {
+    if (nameIndex < nameText.length) {
+      nameElement.textContent += nameText.charAt(nameIndex);
+      nameIndex++;
+      setTimeout(typeName, 100);
+    }
+  }
+
+  // Efek mengetik dan loop untuk role
+  const roles = ["Backend Developer", "Graphic Designer", "Digital Marketing"];
+  const roleElement = document.getElementById("role-text");
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeRole() {
+    const currentRole = roles[roleIndex];
+    if (isDeleting) {
+      roleElement.textContent = currentRole.substring(0, charIndex--);
+      if (charIndex < 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeRole, 500);
+      } else {
+        setTimeout(typeRole, 50);
+      }
+    } else {
+      roleElement.textContent = currentRole.substring(0, charIndex++);
+      if (charIndex > currentRole.length) {
+        isDeleting = true;
+        setTimeout(typeRole, 1500); // jeda saat teks sudah penuh
+      } else {
+        setTimeout(typeRole, 100);
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    typeName();
+    typeRole();
+  });
+</script>
+
+
 
   <script src="js/script.js"></script>
 </body>
