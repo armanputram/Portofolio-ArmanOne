@@ -175,3 +175,52 @@ window.addEventListener("scroll", () => {
     icons.classList.remove("active");
   }
 });
+
+// Typing effects for name and role (moved from inline script)
+// Efek mengetik untuk nama
+const nameText = "Hello, I'm Arman Putra ";
+const nameElement = document.getElementById("typing-text");
+let nameIndex = 0;
+
+function typeName() {
+  if (nameIndex < nameText.length) {
+    nameElement.textContent += nameText.charAt(nameIndex);
+    nameIndex++;
+    setTimeout(typeName, 100);
+  }
+}
+
+// Efek mengetik dan loop untuk role
+
+const roles = ["Backend Developer", "Graphic Designer", "Digital Marketing"];
+const roleElement = document.getElementById("role-text");
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeRole() {
+  const currentRole = roles[roleIndex];
+  if (isDeleting) {
+    roleElement.textContent = currentRole.substring(0, charIndex--);
+    if (charIndex < 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(typeRole, 500);
+    } else {
+      setTimeout(typeRole, 50);
+    }
+  } else {
+    roleElement.textContent = currentRole.substring(0, charIndex++);
+    if (charIndex > currentRole.length) {
+      isDeleting = true;
+      setTimeout(typeRole, 1500); // jeda saat teks sudah penuh
+    } else {
+      setTimeout(typeRole, 100);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  typeName();
+  typeRole();
+});

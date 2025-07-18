@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- YouTube: CodeWithHim -->
 <html lang="en">
 
 <head>
@@ -113,23 +112,24 @@
         <img src="images/arman.jpg" alt="About Me Image" />
       </div>
       <div class="about-content">
-        <h3>Frontend Developer & UI Designer</h3>
-        <p>
-          I'm a passionate frontend developer based in Nepal with a strong
-          focus on creating responsive and user-friendly web applications.
-          With a keen eye for design and attention to detail, I strive to
-          build seamless digital experiences.
-        </p>
-        <p>
-          My journey in web development began 3 years ago, and since then,
-          I've worked on various projects that have helped me refine my skills
-          and stay updated with the latest technologies and trends in the
-          industry.
-        </p>
+<h3>Web Developer</h3>
+<p>
+  I’m currently a student at Politeknik Negeri Banyuwangi, majoring in Software Engineering, where I continue to deepen my understanding of modern technology and system development. My academic journey supports my passion for building digital solutions that are not only functional but also impactful.
+</p>
+<p>
+  Alongside my studies, I work as a web developer with a strong focus on creating responsive, user-centric web applications. I enjoy turning complex ideas into elegant and efficient digital experiences, combining both front-end skills and design sensibility.
+</p>
+<p>
+  I’m also experienced in digital marketing, including content strategy, SEO, and social media campaigns. This allows me to not only build websites but also ensure they reach the right audience and deliver measurable results.
+</p>
+<p>
+  By blending my academic background with real-world skills in both development and marketing, I strive to become a versatile digital creator who delivers value from both a technical and business perspective.
+</p>
+
         <div class="about-info">
           <div class="info-item">
             <span>Name:</span>
-            <p>Himanshu Dhakal</p>
+            <p>Arman Putra Mahadika</p>
           </div>
           <div class="info-item">
             <span>Email:</span>
@@ -265,21 +265,21 @@
           <i class="ph-bold ph-envelope"></i>
           <div>
             <h4>Email</h4>
-            <p>contact@codewithim.com</p>
+            <p>armputramahadika@gmail.com</p>
           </div>
         </div>
         <div class="info-box">
           <i class="ph-bold ph-map-pin"></i>
           <div>
             <h4>Location</h4>
-            <p>Kathmandu, Nepal</p>
+            <p>Indonesia ,Surabaya</p>
           </div>
         </div>
         <div class="info-box">
           <i class="ph-bold ph-phone"></i>
           <div>
             <h4>Phone</h4>
-            <p>+977 9800000000</p>
+            <p>+62 821-3940-9540</p>
           </div>
         </div>
         <div class="contact-social">
@@ -322,7 +322,7 @@
     <div class="footer-container">
       <div class="footer-top">
         <div class="footer-logo">
-          <a href="#" class="logo">CodeWithHim.</a>
+          <a href="#" class="logo">ArmanOne</a>
           <p>
             Creating beautiful digital experiences with clean and efficient
             code.
@@ -357,7 +357,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 CodeWithHim. All Rights Reserved.</p>
+        <p>&copy; 2025 ArmanOne. All Rights Reserved.</p>
         <div class="footer-social">
           <a href="#"><i class="ph-bold ph-linkedin-logo"></i></a>
           <a href="#"><i class="ph-bold ph-instagram-logo"></i></a>
@@ -367,57 +367,7 @@
       </div>
     </div>
   </footer>
-<script>
-  // Efek mengetik untuk nama
-  const nameText = "Hello, I'm Arman Putra ";
-  const nameElement = document.getElementById("typing-text");
-  let nameIndex = 0;
-
-  function typeName() {
-    if (nameIndex < nameText.length) {
-      nameElement.textContent += nameText.charAt(nameIndex);
-      nameIndex++;
-      setTimeout(typeName, 100);
-    }
-  }
-
-  // Efek mengetik dan loop untuk role
-  const roles = ["Backend Developer", "Graphic Designer", "Digital Marketing"];
-  const roleElement = document.getElementById("role-text");
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  function typeRole() {
-    const currentRole = roles[roleIndex];
-    if (isDeleting) {
-      roleElement.textContent = currentRole.substring(0, charIndex--);
-      if (charIndex < 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typeRole, 500);
-      } else {
-        setTimeout(typeRole, 50);
-      }
-    } else {
-      roleElement.textContent = currentRole.substring(0, charIndex++);
-      if (charIndex > currentRole.length) {
-        isDeleting = true;
-        setTimeout(typeRole, 1500); // jeda saat teks sudah penuh
-      } else {
-        setTimeout(typeRole, 100);
-      }
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    typeName();
-    typeRole();
-  });
-</script>
-
-
-
+ 
   <script src="js/script.js"></script>
 </body>
 
